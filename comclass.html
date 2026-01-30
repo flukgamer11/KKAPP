@@ -1,1 +1,154 @@
-// New File
+<!doctype html>
+<html lang="th" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer room</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { box-sizing: border-box; }
+    * { font-family: 'Prompt', sans-serif; }
+    .heading-font { font-family: 'Playfair Display', serif; }
+    
+    /* Glass Effect from Original */
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(30, 41, 59, 0.4);
+    }
+    
+    .gradient-border {
+      position: relative;
+      border-radius: 1rem;
+    }
+    
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.3));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    
+    .grade-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .grade-btn:hover {
+      transform: translateY(-4px);
+      background: rgba(251, 191, 36, 0.1); /* Amber tint */
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+    }
+    
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    
+    /* Stagger delays */
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+  </style>
+ </head>
+ <body class="h-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-auto">
+  
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+   <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+   <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative min-h-full w-full flex flex-col">
+    <header class="relative z-10 px-6 py-6 border-b border-white/5">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="/" target="_top" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
+            <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+           </div>
+           <div>
+             <h1 class="font-bold text-lg text-amber-100">ย้อนกลับ</h1>
+             <p class="text-xs text-slate-400">หน้าหลักโรงเรียน</p>
+           </div>
+        </a>
+        <div class="text-right">
+           <h2 class="text-xl md:text-2xl font-bold heading-font text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-400 to-amber-300">Computer Room</h2>
+           <p class="text-sm text-slate-400">ห้องคอมพิวเตอร์</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow px-6 py-12 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        
+        <div class="mb-12 fade-in">
+          <span class="inline-block py-1 px-3 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm mb-4">Select Grade Level</span>
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">เลือกระดับชั้นเรียน</h3>
+          <div class="w-24 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto"></div>
+        </div>
+
+        <div class="mb-16 fade-in delay-1">
+          <h4 class="text-xl font-semibold text-amber-400 mb-6 flex items-center justify-center gap-2">
+            <span class="text-2xl"></span> ระดับประถมศึกษา
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.1</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 1</div>
+            </a>
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.2</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 2</div>
+            </a>
+            <a href="com-p3" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.3</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 3</div>
+            </a>
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.4</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 4</div>
+            </a>
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.5</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 5</div>
+            </a>
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ป.6</div>
+              <div class="text-slate-300 group-hover:text-amber-400">ประถมศึกษาปีที่ 6</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="fade-in delay-2">
+          <h4 class="text-xl font-semibold text-purple-400 mb-6 flex items-center justify-center gap-2">
+            <span class="text-2xl"></span> ระดับมัธยมศึกษา
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ม.1</div>
+              <div class="text-slate-300 group-hover:text-purple-400">มัธยมศึกษาปีที่ 1</div>
+            </a>
+            <a href="#" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+              <div class="text-3xl mb-2">ม.2</div>
+              <div class="text-slate-300 group-hover:text-purple-400">มัธยมศึกษาปีที่ 2</div>
+            </a>
+            <a href="#" target="_top" class="grade-btn glass-card gradient-border p-6 rounded-xl block group">
+  <div class="text-3xl mb-2">ม.3</div>
+  <div class="text-slate-300 group-hover:text-purple-400">มัธยมศึกษาปีที่ 3</div>
+</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="text-center py-6 text-slate-500 text-sm relative z-10 border-t border-white/5">
+      © 2026 Khlongkhwang School Trat
+    </footer>
+  </div>
+ </body>
+</html>
