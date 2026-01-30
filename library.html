@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Center - Khlongkhwang School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #020617; font-family: 'Prompt', sans-serif; }
+    .glass-card { backdrop-filter: blur(12px); background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .game-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .game-card:hover { transform: translateY(-8px); border-color: rgba(251, 191, 36, 0.4); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(251, 191, 36, 0.1); }
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="min-h-full text-white overflow-auto pb-20">
+  
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 pt-12">
+    <a href="index.html" target="_top" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-12 fade-in">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      กลับหน้าหลัก
+    </a>
+
+    <div class="text-center mb-16 fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">ห้องสมุดออนไลน์</h1>
+      <p class="text-slate-400">แหล่งเรียนรู้และหนังสืออิเล็กทรอนิกส์</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      
+
+      
+
+      
+
+      </div>
+  </div>
+</body>
+</html>
